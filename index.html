@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<img src="1.jpg" alt="宁仔~" style="font-size: 20px;color: black;width: 100px;height: 100px" >
+<div>helloworld</div>
+<span id="clock"></span>
+<script>
+    setInterval(function () {
+        var xhr= new XMLHttpRequest();
+        xhr.open("GET","/clock",true);
+        xhr.onreadystatechange= function () {
+            if(xhr.readyState==4&&xhr.status==200){
+                document.getElementById("clock").innerHTML=xhr.responseText;
+            }
+        }
+        xhr.send();
+    })
+</script>
+</body>
+</html>
