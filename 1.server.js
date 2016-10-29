@@ -18,6 +18,8 @@ var server = http.createServer(function (req, res) {
             res.write(data);
             res.end();
         })
+    }else if(req.url == "/clock"){
+        res.end(new Date().toLocaleString());
     }
 });
 //创建一个监听
